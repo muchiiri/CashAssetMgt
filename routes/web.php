@@ -45,6 +45,47 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // User Alerts
     Route::delete('user-alerts/destroy', 'UserAlertsController@massDestroy')->name('user-alerts.massDestroy');
     Route::resource('user-alerts', 'UserAlertsController', ['except' => ['edit', 'update']]);
+
+    // Expense Categories
+    Route::delete('expense-categories/destroy', 'ExpenseCategoryController@massDestroy')->name('expense-categories.massDestroy');
+    Route::resource('expense-categories', 'ExpenseCategoryController');
+
+    // Income Categories
+    Route::delete('income-categories/destroy', 'IncomeCategoryController@massDestroy')->name('income-categories.massDestroy');
+    Route::resource('income-categories', 'IncomeCategoryController');
+
+    // Expenses
+    Route::delete('expenses/destroy', 'ExpenseController@massDestroy')->name('expenses.massDestroy');
+    Route::resource('expenses', 'ExpenseController');
+
+    // Incomes
+    Route::delete('incomes/destroy', 'IncomeController@massDestroy')->name('incomes.massDestroy');
+    Route::resource('incomes', 'IncomeController');
+
+    // Expense Reports
+    Route::delete('expense-reports/destroy', 'ExpenseReportController@massDestroy')->name('expense-reports.massDestroy');
+    Route::resource('expense-reports', 'ExpenseReportController');
+
+    // Asset Categories
+    Route::delete('asset-categories/destroy', 'AssetCategoryController@massDestroy')->name('asset-categories.massDestroy');
+    Route::resource('asset-categories', 'AssetCategoryController');
+
+    // Asset Locations
+    Route::delete('asset-locations/destroy', 'AssetLocationController@massDestroy')->name('asset-locations.massDestroy');
+    Route::resource('asset-locations', 'AssetLocationController');
+
+    // Asset Statuses
+    Route::delete('asset-statuses/destroy', 'AssetStatusController@massDestroy')->name('asset-statuses.massDestroy');
+    Route::resource('asset-statuses', 'AssetStatusController');
+
+    // Assets
+    Route::delete('assets/destroy', 'AssetController@massDestroy')->name('assets.massDestroy');
+    Route::post('assets/media', 'AssetController@storeMedia')->name('assets.storeMedia');
+    Route::post('assets/ckmedia', 'AssetController@storeCKEditorImages')->name('assets.storeCKEditorImages');
+    Route::resource('assets', 'AssetController');
+
+    // Assets Histories
+    Route::resource('assets-histories', 'AssetsHistoryController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password
