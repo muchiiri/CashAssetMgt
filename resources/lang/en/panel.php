@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'Admin Boiler-Plate',
+    'site_title' => 'Cash & Assets Mgt',
 ];
