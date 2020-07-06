@@ -11,11 +11,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use App\Traits\Auditable;
 // use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use SoftDeletes, Notifiable;
+    use SoftDeletes, Notifiable, Auditable;
     //HasApiTokens;
 
     public $table = 'users';
