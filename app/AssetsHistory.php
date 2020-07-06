@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Auditable;
 
 class AssetsHistory extends Model
 {
+    use Auditable;
     public $table = 'assets_histories';
 
     protected $dates = [

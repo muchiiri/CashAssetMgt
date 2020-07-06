@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Auditable;
 
 class UserAlert extends Model
 {
+    use Auditable;
     public $table = 'user_alerts';
 
     protected $dates = [
